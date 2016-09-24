@@ -15,7 +15,20 @@
 		225817961A3B4EFF008BF565 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 225817941A3B4EFF008BF565 /* Images.xcassets */; };
 		225817A01A3B4F13008BF565 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2258179E1A3B4F13008BF565 /* main.m */; };
 		225817A61A3B50C9008BF565 /* TOTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225817A51A3B50C9008BF565 /* TOTableViewController.m */; };
+		D03037361D95390500F0F854 /* TOClassyAppRater.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03037351D95390500F0F854 /* TOClassyAppRater.swift */; };
+		D030373E1D955A5A00F0F854 /* TOClassyAppRaterExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D030373D1D955A5A00F0F854 /* TOClassyAppRaterExampleTests.swift */; };
+		D03037451D955B0D00F0F854 /* TOClassyAppRater.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03037351D95390500F0F854 /* TOClassyAppRater.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D03037401D955A5A00F0F854 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 225817601A3B4329008BF565 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 225817671A3B4329008BF565;
+			remoteInfo = TOClassyAppRaterExample;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		220B38071A3F1D4F00D567A6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/AppRaterLocalizable.strings; sourceTree = "<group>"; };
@@ -38,10 +51,22 @@
 		22A223711A40602B002A394F /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/AppRaterLocalizable.strings; sourceTree = "<group>"; };
 		22A223721A406035002A394F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AppRaterLocalizable.strings"; sourceTree = "<group>"; };
 		22A223731A406039002A394F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/AppRaterLocalizable.strings"; sourceTree = "<group>"; };
+		D03037341D95390500F0F854 /* TOClassyAppRaterExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TOClassyAppRaterExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		D03037351D95390500F0F854 /* TOClassyAppRater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOClassyAppRater.swift; sourceTree = "<group>"; };
+		D030373B1D955A5A00F0F854 /* TOClassyAppRaterExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TOClassyAppRaterExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D030373D1D955A5A00F0F854 /* TOClassyAppRaterExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOClassyAppRaterExampleTests.swift; sourceTree = "<group>"; };
+		D030373F1D955A5A00F0F854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		225817651A3B4329008BF565 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D03037381D955A5A00F0F854 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -57,6 +82,8 @@
 				2236046A1A3F127B00CE33E7 /* AppRaterLocalizable.strings */,
 				223604701A3F127B00CE33E7 /* TOClassyAppRater.h */,
 				223604711A3F127B00CE33E7 /* TOClassyAppRater.m */,
+				D03037351D95390500F0F854 /* TOClassyAppRater.swift */,
+				D03037341D95390500F0F854 /* TOClassyAppRaterExample-Bridging-Header.h */,
 			);
 			path = TOClassyAppRater;
 			sourceTree = "<group>";
@@ -66,6 +93,7 @@
 			children = (
 				223604691A3F127B00CE33E7 /* TOClassyAppRater */,
 				2258176A1A3B4329008BF565 /* TOClassyAppRaterExample */,
+				D030373C1D955A5A00F0F854 /* TOClassyAppRaterExampleTests */,
 				225817691A3B4329008BF565 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				225817681A3B4329008BF565 /* TOClassyAppRaterExample.app */,
+				D030373B1D955A5A00F0F854 /* TOClassyAppRaterExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,6 +132,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D030373C1D955A5A00F0F854 /* TOClassyAppRaterExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				D030373D1D955A5A00F0F854 /* TOClassyAppRaterExampleTests.swift */,
+				D030373F1D955A5A00F0F854 /* Info.plist */,
+			);
+			path = TOClassyAppRaterExampleTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -123,17 +161,44 @@
 			productReference = 225817681A3B4329008BF565 /* TOClassyAppRaterExample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D030373A1D955A5A00F0F854 /* TOClassyAppRaterExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D03037421D955A5A00F0F854 /* Build configuration list for PBXNativeTarget "TOClassyAppRaterExampleTests" */;
+			buildPhases = (
+				D03037371D955A5A00F0F854 /* Sources */,
+				D03037381D955A5A00F0F854 /* Frameworks */,
+				D03037391D955A5A00F0F854 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D03037411D955A5A00F0F854 /* PBXTargetDependency */,
+			);
+			name = TOClassyAppRaterExampleTests;
+			productName = TOClassyAppRaterExampleTests;
+			productReference = D030373B1D955A5A00F0F854 /* TOClassyAppRaterExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		225817601A3B4329008BF565 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Tim Oliver";
 				TargetAttributes = {
 					225817671A3B4329008BF565 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = ZJWHY76ALA;
+						LastSwiftMigration = 0800;
+					};
+					D030373A1D955A5A00F0F854 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = ZJWHY76ALA;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 225817671A3B4329008BF565;
 					};
 				};
 			};
@@ -182,6 +247,7 @@
 			projectRoot = "";
 			targets = (
 				225817671A3B4329008BF565 /* TOClassyAppRaterExample */,
+				D030373A1D955A5A00F0F854 /* TOClassyAppRaterExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -198,6 +264,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D03037391D955A5A00F0F854 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -205,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D03037361D95390500F0F854 /* TOClassyAppRater.swift in Sources */,
 				225817A61A3B50C9008BF565 /* TOTableViewController.m in Sources */,
 				225817A01A3B4F13008BF565 /* main.m in Sources */,
 				223604731A3F127B00CE33E7 /* TOClassyAppRater.m in Sources */,
@@ -212,7 +286,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D03037371D955A5A00F0F854 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D03037451D955B0D00F0F854 /* TOClassyAppRater.swift in Sources */,
+				D030373E1D955A5A00F0F854 /* TOClassyAppRaterExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D03037411D955A5A00F0F854 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 225817671A3B4329008BF565 /* TOClassyAppRaterExample */;
+			targetProxy = D03037401D955A5A00F0F854 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2236046A1A3F127B00CE33E7 /* AppRaterLocalizable.strings */ = {
@@ -330,10 +421,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = ZJWHY76ALA;
 				INFOPLIST_FILE = TOClassyAppRaterExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timoliver.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = TOClassyAppRaterExample;
+				SWIFT_OBJC_BRIDGING_HEADER = "TOClassyAppRater/TOClassyAppRaterExample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -341,10 +437,60 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = ZJWHY76ALA;
 				INFOPLIST_FILE = TOClassyAppRaterExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.timoliver.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = TOClassyAppRaterExample;
+				SWIFT_OBJC_BRIDGING_HEADER = "TOClassyAppRater/TOClassyAppRaterExample-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		D03037431D955A5A00F0F854 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = ZJWHY76ALA;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = TOClassyAppRaterExampleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appspired.TOClassyAppRaterExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TOClassyAppRaterExample.app/TOClassyAppRaterExample";
+			};
+			name = Debug;
+		};
+		D03037441D955A5A00F0F854 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = ZJWHY76ALA;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = TOClassyAppRaterExampleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appspired.TOClassyAppRaterExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TOClassyAppRaterExample.app/TOClassyAppRaterExample";
 			};
 			name = Release;
 		};
@@ -365,6 +511,15 @@
 			buildConfigurations = (
 				2258178C1A3B4329008BF565 /* Debug */,
 				2258178D1A3B4329008BF565 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D03037421D955A5A00F0F854 /* Build configuration list for PBXNativeTarget "TOClassyAppRaterExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D03037431D955A5A00F0F854 /* Debug */,
+				D03037441D955A5A00F0F854 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
