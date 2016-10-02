@@ -13,37 +13,35 @@ extension Notification.Name {
    static let classyAppRaterDidUpdate = Notification.Name("TOClassyAppRaterDidUpdateNotification")
 }
 
-struct ClassyAppRater {
-   static let settingsNumberOfRatings = "TOAppRaterSettingsNumberOfRatings"
-   static let settingsLastUpdated = "TOAppRaterSettingsNumberLastUpdated"
-   static let searchApiUrl = "https://itunes.apple.com/lookup?id={APPID}&country={COUNTRY}"
+public class ClassyAppRater : NSObject {
+   
+   public static var appId: String?               // App Store ID for this app.
+//   static var localizedMessage: String?    // Cached copy of the localized message.
+   
+   private static let settingsNumberOfRatings = "TOAppRaterSettingsNumberOfRatings"
+   private static let settingsLastUpdated = "TOAppRaterSettingsNumberLastUpdated"
+   private static let searchApiUrl = "https://itunes.apple.com/lookup?id={APPID}&country={COUNTRY}"
    
    //Thanks to Appirater for determining the necessary App Store URLs per iOS version
    //https://github.com/arashpayan/appirater/issues/131
    //https://github.com/arashpayan/appirater/issues/182
    
-   static let reviewUrl     = "itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id={APPID}"
-   static let reviewUrliOS7 = "itms-apps://itunes.apple.com/app/id{APPID}"
-   static let reviewUrliOS8 = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id={APPID}&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software"
-
-
-   #if DEBUG
-      static let checkInterval: TimeInterval = 10 //10 seconds when debugging
-   #else
-      static let checkInterval: TimeInterval = 24*60*60 //24 hours in release
-   #endif
-}
-
-
-public class TOClassyAppRaterSwift {
+   private static let reviewUrl     = "itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id={APPID}"
+   private static let reviewUrliOS7 = "itms-apps://itunes.apple.com/app/id{APPID}"
+   private static let reviewUrliOS8 = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id={APPID}&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software"
    
-   static var appId: String?               // App Store ID for this app.
-//   static var localizedMessage: String?    // Cached copy of the localized message.
+   #if DEBUG
+   private static let checkInterval: TimeInterval = 10 //10 seconds when debugging
+   #else
+   private static let checkInterval: TimeInterval = 24*60*60 //24 hours in release
+   #endif
+   
    
    
    /// Checks the App Store for an updated count of the number of ratings
    /// Parses the JSON, stores the value in UserDefaults and posts a notification on update
    public class func checkForUpdates() {
+      debugPrint(#function)
       
       enum JSONError: Error {
          case invalid
@@ -57,18 +55,19 @@ public class TOClassyAppRaterSwift {
       // Check that longer than checkInterval has passed since the last update
       let defaults = UserDefaults.standard
       let currentTime: TimeInterval = Date().timeIntervalSince1970
-      let previousUpdateTime: TimeInterval = defaults.double(forKey: ClassyAppRater.settingsLastUpdated)
+      let previousUpdateTime: TimeInterval = defaults.double(forKey: settingsLastUpdated)
       
-      if currentTime < previousUpdateTime + ClassyAppRater.checkInterval {
+      if currentTime < previousUpdateTime + checkInterval {
          debugPrint("TOClassyAppRater: Not enough time elapsed since last check")
          return;
       }
       
       // Generate the app store search URL using the appId and current locale region code
       let regionCode = Locale.current.regionCode
-      let searchUrl = ClassyAppRater.searchApiUrl.replacingOccurrences(of: "{APPID}", with: appId).replacingOccurrences(of: "{COUNTRY}", with: regionCode ?? "US")
+      let searchUrl = searchApiUrl.replacingOccurrences(of: "{APPID}", with: appId).replacingOccurrences(of: "{COUNTRY}", with: regionCode ?? "US")
       guard let url = URL(string: searchUrl) else { return }
       
+      debugPrint("TOClassyAppRater: Retrieving JSON from \(url)")
       
       // Retrieve JSON using the app store search API and parse it
       let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -79,22 +78,24 @@ public class TOClassyAppRaterSwift {
          
          do {
             guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],   // root is a dictionary
-               let results = json?["results"] as? [[String: Any]],                                           // results is an array of dictionaries
-               let numberOfRatings = results[0]["userRatingCountForCurrentVersion"] as? Int else {           // no. of ratings is in the first dictionary
+               let results = json?["results"] as? [[String: Any]] else {                                     // results is an array of dictionaries
                   throw JSONError.invalid
             }
-            
-            debugPrint("TOClassyAppRater: retrieved numberOfRatings: \(numberOfRatings)")
+                                                                                                             // no. of ratings is in the first dictionary
+            let numberOfRatings = results[0]["userRatingCountForCurrentVersion"] as? Int ?? 0                // if doesn't exist, there are 0 for the current version
+           
+            debugPrint("TOClassyAppRater: retrieved numberOfRatings for \(regionCode!): \(numberOfRatings)")
             
             DispatchQueue.main.async(execute: {
-               defaults.set(numberOfRatings, forKey: ClassyAppRater.settingsNumberOfRatings)
-               defaults.set(currentTime, forKey: ClassyAppRater.settingsLastUpdated)
+               defaults.set(numberOfRatings, forKey: settingsNumberOfRatings)
+               defaults.set(currentTime, forKey: settingsLastUpdated)
                defaults.synchronize()
                NotificationCenter.default.post(name: .classyAppRaterDidUpdate, object: nil)
             })
             
          } catch {
             debugPrint("TOClassyAppRater: Invalid JSON found during parsing")
+            //debugPrint(data.debugDescription, response, error)
          }
          
       }
@@ -103,14 +104,27 @@ public class TOClassyAppRaterSwift {
   
    }
    
-   // TODO: Caching OK?
-   public static var localizedUsersRatedString: String? = {
+   /// Gets the number of user ratings for this version from UserDefaults
+   ///
+   /// - returns: nil if the entry doesn't exist in UserDefaults, and Int from 0 with the number of ratings for this version
+   public class func numberOfRatings() -> Int? {
+      
       let defaults = UserDefaults.standard
-      if defaults.object(forKey: ClassyAppRater.settingsNumberOfRatings) == nil {
+      if defaults.object(forKey: settingsNumberOfRatings) == nil {
          return nil
       }
       
-      let numberOfRatings = max(defaults.integer(forKey: ClassyAppRater.settingsNumberOfRatings),0)
+      return max(defaults.integer(forKey: settingsNumberOfRatings), 0)
+   }
+   
+   
+   // TODO: Caching ?
+   public class func localizedUsersRatedString() -> String? {
+      
+      guard let numberOfRatings = ClassyAppRater.numberOfRatings() else {
+         return nil
+      }
+   
       var ratedString: String
       
       switch numberOfRatings {
@@ -130,7 +144,7 @@ public class TOClassyAppRaterSwift {
       }
       
       return ratedString
-   }()
+   }
    
    
    /// Open the review page on the App Store
@@ -145,14 +159,17 @@ public class TOClassyAppRaterSwift {
          }
          
          var rateUrl = ClassyAppRater.reviewUrl.replacingOccurrences(of: "{APPID}", with: appId)
-         let systemVersion = Float(UIDevice.current.systemVersion)
-         if systemVersion >= 7.0 && systemVersion < 7.1 {
-            rateUrl = ClassyAppRater.reviewUrliOS7.replacingOccurrences(of: "{APPID}", with: appId)
-         } else if systemVersion >= 8.0 {
+         
+         if NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_8_0 {
             rateUrl = ClassyAppRater.reviewUrliOS8.replacingOccurrences(of: "{APPID}", with: appId)
+         } else if NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_7_0 {
+            rateUrl = ClassyAppRater.reviewUrliOS7.replacingOccurrences(of: "{APPID}", with: appId)
+         }
+
+         if let url = URL(string: rateUrl) {
+            UIApplication.shared.openURL(url)
          }
          
-         UIApplication.shared.openURL(URL(rateURL))
       #endif
    }
 

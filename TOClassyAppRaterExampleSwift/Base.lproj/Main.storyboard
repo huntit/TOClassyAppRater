@@ -25,7 +25,7 @@
         <!--Table View Controller-->
         <scene sceneID="06Z-Wi-lUG">
             <objects>
-                <tableViewController title="TOClassyAppRater" id="lAk-Ig-hMo" userLabel="Table View Controller" customClass="TOTableViewController" sceneMemberID="viewController">
+                <tableViewController title="ClassyAppRater" id="lAk-Ig-hMo" userLabel="Table View Controller" customClass="TableViewController" customModule="TOClassyAppRaterExampleSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="YW3-9l-2U3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,11 +35,11 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iqw-m5-GNO" id="4Q7-Cr-ema">
-                                    <frame key="frameInset" width="342" height="44"/>
+                                    <frame key="frameInset" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="azc-Wl-dea">
-                                            <frame key="frameInset" minX="15" minY="6" width="31.5" height="19.5"/>
+                                            <frame key="frameInset" minX="15" minY="5" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -49,7 +49,7 @@
                                             </variation>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x85-ZX-4Xf">
-                                            <frame key="frameInset" minX="15" minY="25.5" width="52" height="13.5"/>
+                                            <frame key="frameInset" minX="15" minY="25" width="52" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -67,7 +67,7 @@
                             <outlet property="delegate" destination="lAk-Ig-hMo" id="QF9-xQ-CKp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="App Rater" id="PI0-4C-Ep7"/>
+                    <navigationItem key="navigationItem" title="Classy App Rater" id="PI0-4C-Ep7"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Za4-rH-zg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

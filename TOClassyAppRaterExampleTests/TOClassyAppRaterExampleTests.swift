@@ -37,9 +37,10 @@ class TOClassyAppRaterExampleTests: XCTestCase {
    func testCheckForUpdates() {
       //let networkExpectation = expectation(description: "Wait for url to load.")
       
-      TOClassyAppRaterSwift.appId = "493845493"
-      TOClassyAppRaterSwift.checkForUpdates()
-      print(TOClassyAppRaterSwift.localizedUsersRatedString)
+      ClassyAppRater.appId = "406150030"  // Word lookup
+      //      ClassyAppRater.appId = "493845493"   // iComics
+      ClassyAppRater.checkForUpdates()
+      print(ClassyAppRater.localizedUsersRatedString)
       
       
       //waitForExpectations(timeout: 5, handler: nil)

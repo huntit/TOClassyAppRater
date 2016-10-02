@@ -15,9 +15,15 @@
 		225817961A3B4EFF008BF565 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 225817941A3B4EFF008BF565 /* Images.xcassets */; };
 		225817A01A3B4F13008BF565 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2258179E1A3B4F13008BF565 /* main.m */; };
 		225817A61A3B50C9008BF565 /* TOTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 225817A51A3B50C9008BF565 /* TOTableViewController.m */; };
-		D03037361D95390500F0F854 /* TOClassyAppRater.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03037351D95390500F0F854 /* TOClassyAppRater.swift */; };
+		D03037361D95390500F0F854 /* ClassyAppRater.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03037351D95390500F0F854 /* ClassyAppRater.swift */; };
 		D030373E1D955A5A00F0F854 /* TOClassyAppRaterExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D030373D1D955A5A00F0F854 /* TOClassyAppRaterExampleTests.swift */; };
-		D03037451D955B0D00F0F854 /* TOClassyAppRater.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03037351D95390500F0F854 /* TOClassyAppRater.swift */; };
+		D03037451D955B0D00F0F854 /* ClassyAppRater.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03037351D95390500F0F854 /* ClassyAppRater.swift */; };
+		D0660FAF1D9616E700582531 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0660FAE1D9616E700582531 /* AppDelegate.swift */; };
+		D0660FB61D9616E700582531 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0660FB51D9616E700582531 /* Assets.xcassets */; };
+		D0660FB91D9616E700582531 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0660FB71D9616E700582531 /* LaunchScreen.storyboard */; };
+		D0660FBE1D9616FB00582531 /* ClassyAppRater.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03037351D95390500F0F854 /* ClassyAppRater.swift */; };
+		D0660FC01D9617EB00582531 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0660FBF1D9617EB00582531 /* TableViewController.swift */; };
+		D0660FC31D9619FD00582531 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0660FC11D9619FD00582531 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,10 +58,17 @@
 		22A223721A406035002A394F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/AppRaterLocalizable.strings"; sourceTree = "<group>"; };
 		22A223731A406039002A394F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/AppRaterLocalizable.strings"; sourceTree = "<group>"; };
 		D03037341D95390500F0F854 /* TOClassyAppRaterExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TOClassyAppRaterExample-Bridging-Header.h"; sourceTree = "<group>"; };
-		D03037351D95390500F0F854 /* TOClassyAppRater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TOClassyAppRater.swift; sourceTree = "<group>"; };
+		D03037351D95390500F0F854 /* ClassyAppRater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassyAppRater.swift; sourceTree = "<group>"; };
 		D030373B1D955A5A00F0F854 /* TOClassyAppRaterExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TOClassyAppRaterExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D030373D1D955A5A00F0F854 /* TOClassyAppRaterExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOClassyAppRaterExampleTests.swift; sourceTree = "<group>"; };
 		D030373F1D955A5A00F0F854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0660FAC1D9616E700582531 /* TOClassyAppRaterExampleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TOClassyAppRaterExampleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0660FAE1D9616E700582531 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D0660FB51D9616E700582531 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0660FB81D9616E700582531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D0660FBA1D9616E700582531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0660FBF1D9617EB00582531 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		D0660FC21D9619FD00582531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +86,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D0660FA91D9616E700582531 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,7 +102,7 @@
 				2236046A1A3F127B00CE33E7 /* AppRaterLocalizable.strings */,
 				223604701A3F127B00CE33E7 /* TOClassyAppRater.h */,
 				223604711A3F127B00CE33E7 /* TOClassyAppRater.m */,
-				D03037351D95390500F0F854 /* TOClassyAppRater.swift */,
+				D03037351D95390500F0F854 /* ClassyAppRater.swift */,
 				D03037341D95390500F0F854 /* TOClassyAppRaterExample-Bridging-Header.h */,
 			);
 			path = TOClassyAppRater;
@@ -94,6 +114,7 @@
 				223604691A3F127B00CE33E7 /* TOClassyAppRater */,
 				2258176A1A3B4329008BF565 /* TOClassyAppRaterExample */,
 				D030373C1D955A5A00F0F854 /* TOClassyAppRaterExampleTests */,
+				D0660FAD1D9616E700582531 /* TOClassyAppRaterExampleSwift */,
 				225817691A3B4329008BF565 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +124,7 @@
 			children = (
 				225817681A3B4329008BF565 /* TOClassyAppRaterExample.app */,
 				D030373B1D955A5A00F0F854 /* TOClassyAppRaterExampleTests.xctest */,
+				D0660FAC1D9616E700582531 /* TOClassyAppRaterExampleSwift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,8 +135,8 @@
 				225817921A3B4EFF008BF565 /* AppDelegate.h */,
 				225817931A3B4EFF008BF565 /* AppDelegate.m */,
 				225817941A3B4EFF008BF565 /* Images.xcassets */,
-				225817971A3B4F0E008BF565 /* LaunchScreen.xib */,
 				225817991A3B4F0E008BF565 /* Main.storyboard */,
+				225817971A3B4F0E008BF565 /* LaunchScreen.xib */,
 				225817A41A3B50C9008BF565 /* TOTableViewController.h */,
 				225817A51A3B50C9008BF565 /* TOTableViewController.m */,
 				2258176B1A3B4329008BF565 /* Supporting Files */,
@@ -139,6 +161,19 @@
 				D030373F1D955A5A00F0F854 /* Info.plist */,
 			);
 			path = TOClassyAppRaterExampleTests;
+			sourceTree = "<group>";
+		};
+		D0660FAD1D9616E700582531 /* TOClassyAppRaterExampleSwift */ = {
+			isa = PBXGroup;
+			children = (
+				D0660FAE1D9616E700582531 /* AppDelegate.swift */,
+				D0660FBF1D9617EB00582531 /* TableViewController.swift */,
+				D0660FC11D9619FD00582531 /* Main.storyboard */,
+				D0660FB51D9616E700582531 /* Assets.xcassets */,
+				D0660FB71D9616E700582531 /* LaunchScreen.storyboard */,
+				D0660FBA1D9616E700582531 /* Info.plist */,
+			);
+			path = TOClassyAppRaterExampleSwift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +214,23 @@
 			productReference = D030373B1D955A5A00F0F854 /* TOClassyAppRaterExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		D0660FAB1D9616E700582531 /* TOClassyAppRaterExampleSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0660FBD1D9616E700582531 /* Build configuration list for PBXNativeTarget "TOClassyAppRaterExampleSwift" */;
+			buildPhases = (
+				D0660FA81D9616E700582531 /* Sources */,
+				D0660FA91D9616E700582531 /* Frameworks */,
+				D0660FAA1D9616E700582531 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TOClassyAppRaterExampleSwift;
+			productName = TOClassyAppRaterExampleSwift;
+			productReference = D0660FAC1D9616E700582531 /* TOClassyAppRaterExampleSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -199,6 +251,11 @@
 						DevelopmentTeam = ZJWHY76ALA;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 225817671A3B4329008BF565;
+					};
+					D0660FAB1D9616E700582531 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = ZJWHY76ALA;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -248,6 +305,7 @@
 			targets = (
 				225817671A3B4329008BF565 /* TOClassyAppRaterExample */,
 				D030373A1D955A5A00F0F854 /* TOClassyAppRaterExampleTests */,
+				D0660FAB1D9616E700582531 /* TOClassyAppRaterExampleSwift */,
 			);
 		};
 /* End PBXProject section */
@@ -271,6 +329,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D0660FAA1D9616E700582531 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0660FC31D9619FD00582531 /* Main.storyboard in Resources */,
+				D0660FB91D9616E700582531 /* LaunchScreen.storyboard in Resources */,
+				D0660FB61D9616E700582531 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -278,7 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D03037361D95390500F0F854 /* TOClassyAppRater.swift in Sources */,
+				D03037361D95390500F0F854 /* ClassyAppRater.swift in Sources */,
 				225817A61A3B50C9008BF565 /* TOTableViewController.m in Sources */,
 				225817A01A3B4F13008BF565 /* main.m in Sources */,
 				223604731A3F127B00CE33E7 /* TOClassyAppRater.m in Sources */,
@@ -290,8 +358,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D03037451D955B0D00F0F854 /* TOClassyAppRater.swift in Sources */,
+				D03037451D955B0D00F0F854 /* ClassyAppRater.swift in Sources */,
 				D030373E1D955A5A00F0F854 /* TOClassyAppRaterExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0660FA81D9616E700582531 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0660FAF1D9616E700582531 /* AppDelegate.swift in Sources */,
+				D0660FBE1D9616FB00582531 /* ClassyAppRater.swift in Sources */,
+				D0660FC01D9617EB00582531 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +411,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				2258179A1A3B4F0E008BF565 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D0660FB71D9616E700582531 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0660FB81D9616E700582531 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D0660FC11D9619FD00582531 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0660FC21D9619FD00582531 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -494,6 +588,52 @@
 			};
 			name = Release;
 		};
+		D0660FBB1D9616E700582531 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = ZJWHY76ALA;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = TOClassyAppRaterExampleSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appspired.TOClassyAppRaterExampleSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D0660FBC1D9616E700582531 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = ZJWHY76ALA;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = TOClassyAppRaterExampleSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.appspired.TOClassyAppRaterExampleSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -523,6 +663,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D0660FBD1D9616E700582531 /* Build configuration list for PBXNativeTarget "TOClassyAppRaterExampleSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0660FBB1D9616E700582531 /* Debug */,
+				D0660FBC1D9616E700582531 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
