@@ -13,7 +13,7 @@ extension Notification.Name {
    static let classyAppRaterDidUpdate = Notification.Name("TOClassyAppRaterDidUpdateNotification")
 }
 
-public class ClassyAppRater : NSObject {
+@objcMembers public class ClassyAppRater : NSObject {
    
    public static var appId: String?               // App Store ID for this app.
 //   static var localizedMessage: String?    // Cached copy of the localized message.
@@ -29,14 +29,13 @@ public class ClassyAppRater : NSObject {
    private static let reviewUrl     = "itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id={APPID}"
    private static let reviewUrliOS7 = "itms-apps://itunes.apple.com/app/id{APPID}"
    private static let reviewUrliOS8 = "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id={APPID}&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software"
-   
+   private static let reviewUrliOS10 = "itms-apps://itunes.apple.com/app/id{APPID}?action=write-review"
+  
    #if DEBUG
    private static let checkInterval: TimeInterval = 10 //10 seconds when debugging
    #else
    private static let checkInterval: TimeInterval = 24*60*60 //24 hours in release
    #endif
-   
-   
    
    /// Checks the App Store for an updated count of the number of ratings
    /// Parses the JSON, stores the value in UserDefaults and posts a notification on update
@@ -72,7 +71,7 @@ public class ClassyAppRater : NSObject {
       // Retrieve JSON using the app store search API and parse it
       let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
          guard let data = data, error == nil else {
-            debugPrint("TOClassyAppRater: Unable to load JSON data from iTunes Search API - \(error?.localizedDescription)")
+            debugPrint("TOClassyAppRater: Unable to load JSON data from iTunes Search API - \(error?.localizedDescription ?? "")")
             return
          }
          
@@ -149,7 +148,7 @@ public class ClassyAppRater : NSObject {
    
    /// Open the review page on the App Store
    public class func rateApp() {
-      #if (arch(i386) || arch(x86_64)) && os(iOS)  // Simulator
+      #if targetEnvironment(simulator)  // Simulator
          debugPrint("TOClassyAppRater: Cannot open App Store on iOS Simulator")
          return
       #else
@@ -159,15 +158,17 @@ public class ClassyAppRater : NSObject {
          }
          
          var rateUrl = ClassyAppRater.reviewUrl.replacingOccurrences(of: "{APPID}", with: appId)
-         
-         if NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_8_0 {
+
+         if NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_9_4 {
+            rateUrl = ClassyAppRater.reviewUrliOS10.replacingOccurrences(of: "{APPID}", with: appId)
+        } else if NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_8_0 {
             rateUrl = ClassyAppRater.reviewUrliOS8.replacingOccurrences(of: "{APPID}", with: appId)
          } else if NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_7_0 {
             rateUrl = ClassyAppRater.reviewUrliOS7.replacingOccurrences(of: "{APPID}", with: appId)
          }
 
          if let url = URL(string: rateUrl) {
-            UIApplication.shared.openURL(url)
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
          }
          
       #endif
